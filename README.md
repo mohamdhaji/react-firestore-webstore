@@ -3,7 +3,7 @@
 
 ## DEMO 
 
-[LINK](https://mohamdhaji.github.io/adalene-webstore/)
+[YOUTUBE VIDEO](https://mohamdhaji.github.io/adalene-webstore/)
 OR
 [https://adelene-webstore.herokuapp.com/adalene-webstore/](https://adelene-webstore.herokuapp.com/adalene-webstore/)
 
