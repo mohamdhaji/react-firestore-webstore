@@ -2,6 +2,9 @@
   "name": "store-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.16.1"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@szhsin/react-menu": "^1.5.0",
