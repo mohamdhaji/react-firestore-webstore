@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
+import {  getFirebase } from "react-redux-firebase";
 import { reduxFirestore, getFirestore } from "redux-firestore";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 import firebase from "./firebase";
+import { compose } from "redux";
 
 export const rrfConfig = {
   userProfile: "users",
@@ -19,7 +19,12 @@ export const configureStore = (preloadedState) => {
 
   const storeEnhancers = [middlewareEnhancer];
 
-  const composedEnhancer = composeWithDevTools(
+
+  const composee=process.env.NODE_ENV === "development"
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  : null || compose
+
+  const composedEnhancer = composee (
     ...storeEnhancers,
     // reactReduxFirebase(firebase, rrfConfig),
     reduxFirestore(firebase)
