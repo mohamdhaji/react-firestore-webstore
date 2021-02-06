@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect,  } from "react";
 import ProductCard from "../../components/util/cards/productCard";
 
-import img2 from "../../util/images/img2.png";
-import img4 from "../../util/images/img4.png";
+import img2 from "../../util/images/img2.jpeg";
+import img4 from "../../util/images/img4.jpeg";
 
-import img5 from "../../util/images/img5.png";
-import img6 from "../../util/images/img6.png";
-import img7 from "../../util/images/img7.png";
+import img5 from "../../util/images/img5.jpeg";
+import img6 from "../../util/images/img6.jpeg";
+import img7 from "../../util/images/img7.jpeg";
 
-import img14 from "../../util/images/img14.png";
-import img15 from "../../util/images/img15.png";
-import img16 from "../../util/images/img16.png";
-import img17 from "../../util/images/img17.png";
-import img18 from "../../util/images/img18.png";
+import img14 from "../../util/images/img14.jpeg";
+import img15 from "../../util/images/img15.jpeg";
+import img16 from "../../util/images/img16.jpeg";
+import img17 from "../../util/images/img17.jpeg";
+import img18 from "../../util/images/img18.jpeg";
 
 import Loader from "../../components/util/loader";
 import product from "../../util/images/product.png";
