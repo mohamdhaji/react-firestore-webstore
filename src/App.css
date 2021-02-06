@@ -136,7 +136,7 @@ svg {
 /* HOME*/
 
 .home .main-section {
-  background-image: url(./util/images/home.png);
+  background-image: url(./util/images/home.jpeg);
   background-position: center;
   background-attachment: fixed;
   background-size: 100%;
@@ -407,7 +407,7 @@ svg {
   transform: scale(0.85);
 }
 .feature__two {
-  background-image: url(./util/images/img1.png);
+  background-image: url(./util/images/img1.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: contain;
@@ -452,7 +452,7 @@ svg {
   align-items: center;
 }
 .feature__three {
-  background-image: url(./util/images/img3.png);
+  background-image: url(./util/images/img3.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -880,7 +880,7 @@ a:not(.black-shadow) {
 }
 
 .our-story .features .feature:nth-child(2) {
-  background-image: url(./util/images/img8.png);
+  background-image: url(./util/images/img8.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: contain;
@@ -890,7 +890,7 @@ a:not(.black-shadow) {
 }
 
 .our-story .features .feature:nth-child(3) {
-  background-image: url(./util/images/img9.png);
+  background-image: url(./util/images/img9.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: contain;
@@ -900,7 +900,7 @@ a:not(.black-shadow) {
 }
 
 .our-craft .features .feature:nth-child(2) {
-  background-image: url(./util/images/img10.png);
+  background-image: url(./util/images/img10.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: contain;
@@ -910,7 +910,7 @@ a:not(.black-shadow) {
 }
 
 .our-craft .features .feature:nth-child(3) {
-  background-image: url(./util/images/img11.png);
+  background-image: url(./util/images/img11.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: contain;
@@ -919,7 +919,7 @@ a:not(.black-shadow) {
   -webkit-transform: translateZ(0);
 }
 .our-craft .features .feature:nth-child(6) {
-  background-image: url(./util/images/img12.png);
+  background-image: url(./util/images/img12.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: contain;
