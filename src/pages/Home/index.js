@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect,  } from "react";
 import ProductCard from "../../components/util/cards/productCard";
 
 import img2 from "../../util/images/img2.jpeg";
