@@ -143,10 +143,8 @@ export default function Contact() {
 
   const inquiries = {
     title: "Inquiries",
-    text: [
-      "For questions regarding our products and services you can also",
-      "contact us by filling out the form below.",
-    ],
+    text:
+      "For questions regarding our products and services you can also contact us by filling out the form below",
   };
 
   return (

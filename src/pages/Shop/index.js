@@ -104,7 +104,6 @@ function Shop(props) {
     });
   };
 
-
   const handleFilters = async (newData, category, collection) => {
     const newFilters = { ...filters };
     if (category === "collection") {
@@ -128,12 +127,18 @@ function Shop(props) {
     }
   };
 
-  const sliderOnChangeCommitted = async () => {
+  const applyFilters = async (filters) => {
+    setFilters({...filters})
     const res = await props.filterProducts(filters);
     setPagination(res.lastRef);
     setDisableLoadBtn(res.disableLoadBtn);
   };
 
+  const sliderOnChangeCommitted = async () => {
+    const res = await props.filterProducts(filters);
+    setPagination(res.lastRef);
+    setDisableLoadBtn(res.disableLoadBtn);
+  };
 
   return (
     <div>
@@ -146,77 +151,87 @@ function Shop(props) {
       >
         <div className="main-title">SHOP ALL</div>
       </ReactCSSTransitionGroup>
-    <div className="shop">
-
-      <div className="left">
-        <div className="title">Filter by</div>
-        <div className="dash"></div>
-        <ListCollapse
-          handleFilters={(filters, collection) =>
-            handleFilters(filters, "collection", collection)
+      <div className="filter-btn">
+        <Button
+          onClick={() =>
+            props.openModal("Filter", {
+              collections,
+              selectedModels,
+              filters,
+              models,
+              applyFilters: applyFilters
+            })
           }
-          initState={true}
-          list={collections}
-          title="Collection"
+          title="Filter"
+          type="btn-load"
+          color="primary"
+          size="20px"
         />
-        <PriceCollapse
-          handleFilters={(filters) => handleFilters(filters, "price")}
-          initState={false}
-          title="Price"
-          sliderBlur={sliderOnChangeCommitted}
-        />
-
-        <CollapseCheckbox
-          initState={false}
-          title="Model"
-          collection={filters.collection}
-          list={selectedModels}
-          handleFilters={(filters) => handleFilters(filters, "model")}
-        />
-        {/* <CollapseCheckbox
-          initState={false}
-          title="Out of store"
-          list={outOfStock}
-          handleFilters={(filters) => handleFilters(filters, "outOfStock")}
-        /> */}
       </div>
-      {props.loading ? (
-        <>
-          <div className="products">
-            <Loader />
-          </div>
-        </>
-      ) : (
-        <div className="products">
-          {loadedProducts.length > 0 ? (
-            <>
-              {loadedProducts.map((product) => (
-                <ProductCard
-                  openModal={props.openModal}
-                  closeModal={props.closeModal}
-                  key={product.id}
-                  product={product}
-                  viewProduct={() => viewProduct(product.id)}
-                />
-              ))}
-              <div className="load-more">
-                <Button
-                  disabled={disableLoadBtn}
-                  onClick={loadMore}
-                  title="Load More"
-                  type="btn-load"
-                  color="primary"
-                  size="20px"
-                  loading={loadMoreLoading}
-                />
-              </div>
-            </>
-          ) : (
-            <div className="no-products">No Products</div>
-          )}
+      <div className="shop">
+        <div className="left">
+          <div className="title">Filter by</div>
+          <div className="dash"></div>
+          <ListCollapse
+            handleFilters={(filters, collection) =>
+              handleFilters(filters, "collection", collection)
+            }
+            initState={true}
+            list={collections}
+            title="Collection"
+          />
+          <PriceCollapse
+            handleFilters={(filters) => handleFilters(filters, "price")}
+            initState={false}
+            title="Price"
+            sliderBlur={sliderOnChangeCommitted}
+          />
+
+          <CollapseCheckbox
+            initState={false}
+            title="Model"
+            collection={filters.collection}
+            list={selectedModels}
+            handleFilters={(filters) => handleFilters(filters, "model")}
+          />
         </div>
-      )}
-    </div>
+        {props.loading ? (
+          <>
+            <div className="products">
+              <Loader />
+            </div>
+          </>
+        ) : (
+          <div className="products">
+            {loadedProducts.length > 0 ? (
+              <>
+                {loadedProducts.map((product) => (
+                  <ProductCard
+                    openModal={props.openModal}
+                    closeModal={props.closeModal}
+                    key={product.id}
+                    product={product}
+                    viewProduct={() => viewProduct(product.id)}
+                  />
+                ))}
+                <div className="load-more">
+                  <Button
+                    disabled={disableLoadBtn}
+                    onClick={loadMore}
+                    title="Load More"
+                    type="btn-load"
+                    color="primary"
+                    size="20px"
+                    loading={loadMoreLoading}
+                  />
+                </div>
+              </>
+            ) : (
+              <div className="no-products">No Products</div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

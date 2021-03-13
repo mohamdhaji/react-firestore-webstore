@@ -37,7 +37,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 function Home(props) {
   const matchesMd = useMediaQuery("(max-width:1100px)");
   const matchesSm = useMediaQuery("(max-width:870px)");
-  const matchesMobile = useMediaQuery("(max-width:700px)");
+  const matchesMobile = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     
@@ -137,7 +137,7 @@ function Home(props) {
           transitionName="SlideOut"
         >
           <div className="title">CUE THE COLOR</div>
-          <Button title="Shop the collection" type="btn-v1" />
+          <Button onClick={()=>props.history.push("shop")} title="Shop the collection" type="btn-v1" />
         </ReactCSSTransitionGroup>
       </section>
       <div className="best-sell-products">
@@ -165,7 +165,7 @@ function Home(props) {
               </LazyLoadComponent>
             </div>
 
-            <Button title="Shop All Bags" type="btn-main" />
+            <Button onClick={()=>props.history.push("shop")} title="Shop All Bags" type="btn-main" />
           </>
         )}
       </div>

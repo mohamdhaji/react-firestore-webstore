@@ -17,6 +17,7 @@ import {
 } from "../../actions/asyncActions";
 import { addToCart } from "../../actions/userActions";
 import { toastr } from "react-redux-toastr";
+import { useHistory } from "react-router-dom";
 
 function Product(props) {
   const [product, setProduct] = useState({});
@@ -29,6 +30,7 @@ function Product(props) {
     if (target.value <= product.quantity && target.value >= 0)
       setQuantity(target.value);
   };
+  let history = useHistory();
 
   const addToCart = async () => {
     const data = {
@@ -178,6 +180,11 @@ function Product(props) {
 
             <RightArrow onClick={next} className="next" size="25px" />
           </div>
+          <div onClick={()=>history.goBack()} className="home-back">
+          <LeftArrow className="back " size="25px" />
+          <div>Back</div>
+          </div>
+
           <div className="left">
             {product.images && <ProdImg images={product.images}></ProdImg>}
             {/* <img src={product.mainImage} alt="" /> */}

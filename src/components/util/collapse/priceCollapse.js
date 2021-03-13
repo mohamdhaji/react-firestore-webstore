@@ -20,7 +20,10 @@ export default function PriceCollapse(props) {
     if (props.initState) {
       setOpen(true);
     }
-  }, []);
+    if (props.init && props.init.length > 0) {
+      setPrice(props.init);
+    }
+  }, [props.init]);
   const [price, setPrice] = React.useState([0, 500]);
   const handleChange = (event, newValue) => {
     setPrice(newValue);

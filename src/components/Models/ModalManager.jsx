@@ -3,10 +3,14 @@ import { connect } from 'react-redux'
 import AuthModel from "./auth";
 import ProductModel from "./product"
 import CartModel from "./cart"
+import Menu from "./mobile/menu"
+import Filter from "./mobile/filter"
 const modalLookup = {
   AuthModel,
   ProductModel,
-  CartModel
+  CartModel,
+  Menu,
+  Filter
 }
 
 const mapState = (state) => ({

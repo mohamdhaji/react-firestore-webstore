@@ -12,8 +12,12 @@ export default function ListCollapse(props) {
   useEffect(() => {
     if (props.initState) {
       setOpen(true);
+
     }
-  }, []);
+    if(props.init && props.init.length > 0){
+      setSelectedCollection(props.init)
+    }
+  }, [props.init]);
 
   const [selectedCollection, setSelectedCollection] = useState("All");
 

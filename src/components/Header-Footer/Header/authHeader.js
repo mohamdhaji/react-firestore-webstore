@@ -43,7 +43,13 @@ function AuthHeader(props) {
         </div>
       </div>
       <ul className="user">
-        <Menu className="menu" size="30px" />
+        <Menu
+          onClick={() => props.openModal("Menu",{
+            openModal:props.openModal,
+          })}
+          className="menu"
+          size="30px"
+        />
         {admin === "admin" ? (
           <li className="admin">Admin</li>
         ) : (

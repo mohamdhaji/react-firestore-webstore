@@ -21,6 +21,11 @@ class CollapseCheckbox extends Component {
         open: this.props.initState,
       });
     }
+    if(this.props.init){
+      this.setState({
+        checked:this.props.init
+      })
+    }
   }
 
   componentDidUpdate(prevProps){
