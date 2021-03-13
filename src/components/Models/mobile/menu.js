@@ -33,16 +33,16 @@ const Menu = (props) => {
         <Link onClick={props.closeModal} to="/">
           Home
         </Link>
-        <Link onClick={props.closeModal} to="shop">
+        <Link onClick={props.closeModal} to="/shop">
           Shop
         </Link>
-        <Link onClick={props.closeModal} to="ourCraft">
+        <Link onClick={props.closeModal} to="/ourCraft">
           Our Craft
         </Link>
-        <Link onClick={props.closeModal} to="ourStory">
+        <Link onClick={props.closeModal} to="/ourStory">
           Our Stroy
         </Link>
-        <Link onClick={props.closeModal} to="contact-us">
+        <Link onClick={props.closeModal} to="/contact-us">
           Contact
         </Link>
       </div>

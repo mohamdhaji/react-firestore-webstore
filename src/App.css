@@ -67,12 +67,12 @@ svg {
 }
 
 .user .menu {
-  margin-left: 30px;
+  margin-left: 20px;
   display: none;
   cursor: pointer;
 }
 .user .cart-item {
-  margin-left: 50px;
+  margin-left: 30px;
   font-size: 20px;
   color: #bc4c2a;
   font-weight: 300;
@@ -2308,7 +2308,7 @@ button[disabled] {
     width: 47%;
   }
   .cart-item {
-    font-size: 40px;
+    font-size: 30px;
   }
   .auth-header .user {
     width: 53%;

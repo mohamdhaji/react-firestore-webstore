@@ -44,11 +44,13 @@ function AuthHeader(props) {
       </div>
       <ul className="user">
         <Menu
-          onClick={() => props.openModal("Menu",{
-            openModal:props.openModal,
-            authenticated,
-            handleSignOut:handleSignOut
-          })}
+          onClick={() =>
+            props.openModal("Menu", {
+              openModal: props.openModal,
+              authenticated,
+              handleSignOut: handleSignOut,
+            })
+          }
           className="menu"
           size="30px"
         />
@@ -56,7 +58,13 @@ function AuthHeader(props) {
           <li className="admin">Admin</li>
         ) : (
           <li onClick={openCart} className="cart-item">
-            Cart ({props.profile.cart || 0})
+            Cart (
+            {props.profile.cart
+              ? props.profile.cart >= 100
+                ? "+99" 
+                : props.profile.cart
+              : 0}
+            )
           </li>
         )}
 
