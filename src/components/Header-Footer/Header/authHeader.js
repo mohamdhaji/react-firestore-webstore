@@ -46,6 +46,8 @@ function AuthHeader(props) {
         <Menu
           onClick={() => props.openModal("Menu",{
             openModal:props.openModal,
+            authenticated,
+            handleSignOut:handleSignOut
           })}
           className="menu"
           size="30px"

@@ -2147,6 +2147,7 @@ button[disabled] {
 .my-orders {
   display: flex;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 .my-orders .left {
   display: flex;
@@ -2249,6 +2250,9 @@ button[disabled] {
 .filter-btn button {
   width: 100%;
   border: 1px black solid;
+}
+.my-orders > button{
+  display:none ;
 }
 
 @media (max-width: 1100px) {
@@ -2438,9 +2442,51 @@ button[disabled] {
     display: flex;
     justify-content: left;
     align-items: center;
-    width: 180px;
+    width: 90px;
     font-size: 20px;
     margin-bottom: 8px;
+    cursor:pointer;
+  }
+  .cart-model {
+    width:250px;
+  }
+  .user-profile__header{
+    display:none;
+  }
+  .my-orders > .right{
+    display:none;
+  }
+  .my-orders .left {
+    width:100%;
+  }
+  .user-profile__header{
+    padding-left: 0px;
+  }
+  .cart-product .total-price {
+    right: 4px;
+    top: 110px;
+  }
+  .my-orders .right .price{
+    font-size: 18px;
+    margin-top:35px;
+  }
+  .my-orders .cart-product .right{
+    margin-left:15px;
+  }
+  .user-layout{
+    width:100%;
+  }
+  .user-layout > section{
+    padding-left:0px !important;
+    
+  }
+  .my-orders .cart-product .cart-input {
+    margin-top: 30px;
+  }
+  .my-orders > button{
+    display: block;
+    width:100%;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 350px){

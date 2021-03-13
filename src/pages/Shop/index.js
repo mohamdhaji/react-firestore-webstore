@@ -128,7 +128,7 @@ function Shop(props) {
   };
 
   const applyFilters = async (filters) => {
-    setFilters({...filters})
+    setFilters({ ...filters });
     const res = await props.filterProducts(filters);
     setPagination(res.lastRef);
     setDisableLoadBtn(res.disableLoadBtn);
@@ -159,7 +159,7 @@ function Shop(props) {
               selectedModels,
               filters,
               models,
-              applyFilters: applyFilters
+              applyFilters: applyFilters,
             })
           }
           title="Filter"
@@ -169,37 +169,37 @@ function Shop(props) {
         />
       </div>
       <div className="shop">
-        <div className="left">
-          <div className="title">Filter by</div>
-          <div className="dash"></div>
-          <ListCollapse
-            handleFilters={(filters, collection) =>
-              handleFilters(filters, "collection", collection)
-            }
-            initState={true}
-            list={collections}
-            title="Collection"
-          />
-          <PriceCollapse
-            handleFilters={(filters) => handleFilters(filters, "price")}
-            initState={false}
-            title="Price"
-            sliderBlur={sliderOnChangeCommitted}
-          />
+        {!props.loading && (
+          <div className="left">
+            <div className="title">Filter by</div>
+            <div className="dash"></div>
+            <ListCollapse
+              handleFilters={(filters, collection) =>
+                handleFilters(filters, "collection", collection)
+              }
+              initState={true}
+              list={collections}
+              title="Collection"
+            />
+            <PriceCollapse
+              handleFilters={(filters) => handleFilters(filters, "price")}
+              initState={false}
+              title="Price"
+              sliderBlur={sliderOnChangeCommitted}
+            />
 
-          <CollapseCheckbox
-            initState={false}
-            title="Model"
-            collection={filters.collection}
-            list={selectedModels}
-            handleFilters={(filters) => handleFilters(filters, "model")}
-          />
-        </div>
+            <CollapseCheckbox
+              initState={false}
+              title="Model"
+              collection={filters.collection}
+              list={selectedModels}
+              handleFilters={(filters) => handleFilters(filters, "model")}
+            />
+          </div>
+        )}
         {props.loading ? (
           <>
-            <div className="products">
-              <Loader />
-            </div>
+            <Loader />
           </>
         ) : (
           <div className="products">

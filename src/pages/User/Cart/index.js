@@ -98,6 +98,8 @@ function Cart(props) {
   return (
     <UserLayout>
       <div className="my-orders">
+      <Button loading={false} title="Checkout" type="btn-checkout" />
+
         <div className="left">
           <div className="title">My Cart</div>
           <div className="dash"></div>

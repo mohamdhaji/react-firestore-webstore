@@ -5,7 +5,7 @@ function UserLayout(props) {
   return (
     <div className="user-layout">
       <ProfileHeader />
-      <div style={{ paddingLeft: "20px" }}>{props.children}</div>
+      <section  style={{ paddingLeft: "20px" }}>{props.children}</section>
     </div>
   );
 }
