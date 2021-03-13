@@ -18,7 +18,6 @@ export const cartQuery = (uid) => {
   }
 };
 export const cartProductsQuery = (uid) => {
-  console.log(uid)
   if (uid !== undefined) {
     return [
       {

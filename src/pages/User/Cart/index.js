@@ -34,7 +34,6 @@ function Cart(props) {
   };
 
   const remove = async (productId, productQuantity, userProductQuantity) => {
-    console.log("remove")
     await props.remove(productId, productQuantity, userProductQuantity,true);
   };
 
@@ -56,7 +55,6 @@ function Cart(props) {
   };
 
   useEffect(() => {
-    console.log(props.cart)
     const getProducts = async () => {
       if (mount) {
         setLoading(true);

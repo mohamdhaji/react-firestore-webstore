@@ -54,6 +54,8 @@ function CartModel(props) {
     );
   };
 
+ 
+
   useEffect(() => {
     const getProducts = async () => {
       if (mount) {
@@ -156,7 +158,12 @@ function CartModel(props) {
               )}
             </div>
             <Link to="/orders">
-              <Button onClick={props.closeModal} loading={false} title="View Cart " type="btn-loading" />
+              <Button
+                onClick={props.closeModal}
+                loading={false}
+                title="View Cart "
+                type="btn-loading"
+              />
             </Link>
           </div>
         )}

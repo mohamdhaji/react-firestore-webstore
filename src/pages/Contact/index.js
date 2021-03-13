@@ -168,14 +168,13 @@ export default function Contact() {
           <ContactCard title={inquiries.title} text={inquiries.text} />
         </div>
         <form className="contact-form">
-          <div className="inline-input">
+          <div className="inline-inputs">
             <FormField
               id={"firstName"}
               formdata={formData.firstName}
               change={(element) => updateForm(element)}
             />
-          </div>
-          <div className="inline-input">
+
             <FormField
               id={"lastName"}
               formdata={formData.lastName}

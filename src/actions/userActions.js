@@ -111,7 +111,7 @@ export const addToCart = (props) => async (
   const firebase = getFirebase();
 
   const enteredQuantity = props.quantity;
-
+  if(uid !== undefined)
   if (productQuantity > 0 && enteredQuantity > 0) {
     dispatch(asyncActionStart());
     const collectionRef = firestore.collection("products").doc(productId);
@@ -183,7 +183,7 @@ export const addOne = (
   const uid = getState().firebase.auth.uid;
   const userCart = getState().firebase.profile.cart;
 
-  if (productQuantity > 0) {
+  if (uid && productQuantity > 0 ) {
     const collectionRef = firestore.collection("products").doc(productId);
     return collectionRef
       .update({
@@ -273,13 +273,12 @@ export const removeOne = (
   price,
   dispatchProducts = false
 ) => async (dispatch, getState, { getFirebase, getFirestore }) => {
-  console.log(total, price);
   const firestore = getFirestore();
   const firebase = getFirebase();
   const uid = getState().firebase.auth.uid;
   const userCart = getState().firebase.profile.cart;
 
-  if (userProductQuantity > 0) {
+  if (uid && userProductQuantity > 0) {
     const collectionRef = firestore.collection("products").doc(productId);
 
     collectionRef

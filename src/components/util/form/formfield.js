@@ -88,7 +88,7 @@ const Formfield = ({ formdata, change, id }) => {
     return formTemplate;
   };
 
-  return <div>{renderTemplate()}</div>;
+  return <>{renderTemplate()}</>;
 };
 
 export default Formfield;

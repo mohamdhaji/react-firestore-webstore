@@ -134,10 +134,9 @@ function Shop(props) {
     setDisableLoadBtn(res.disableLoadBtn);
   };
 
-  console.log(props.products)
 
   return (
-    <div className="shop">
+    <div>
       <ReactCSSTransitionGroup
         transitionAppear={true}
         transitionAppearTimeout={600}
@@ -147,6 +146,7 @@ function Shop(props) {
       >
         <div className="main-title">SHOP ALL</div>
       </ReactCSSTransitionGroup>
+    <div className="shop">
 
       <div className="left">
         <div className="title">Filter by</div>
@@ -216,6 +216,7 @@ function Shop(props) {
           )}
         </div>
       )}
+    </div>
     </div>
   );
 }

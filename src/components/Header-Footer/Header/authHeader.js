@@ -10,6 +10,8 @@ import { withRouter } from "react-router-dom";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { cartQuery } from "../../../querys";
+import { RiMenuLine as Menu } from "react-icons/ri";
+
 function AuthHeader(props) {
   const handleSignOut = () => {
     props.firebase.logout();
@@ -30,7 +32,6 @@ function AuthHeader(props) {
       });
   };
 
-
   return (
     <div className="auth-header">
       <div className="identity-providers">
@@ -42,6 +43,7 @@ function AuthHeader(props) {
         </div>
       </div>
       <ul className="user">
+        <Menu className="menu" size="30px" />
         {admin === "admin" ? (
           <li className="admin">Admin</li>
         ) : (

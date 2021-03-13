@@ -1,4 +1,4 @@
-import React, { useEffect,  } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../../components/util/cards/productCard";
 
 import img2 from "../../util/images/img2.jpeg";
@@ -32,8 +32,25 @@ import {
   LazyLoadImage,
 } from "react-lazy-load-image-component";
 import { openModal, closeModal } from "../../actions/modalActions";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 function Home(props) {
+  const matchesMd = useMediaQuery("(max-width:1100px)");
+  const matchesSm = useMediaQuery("(max-width:870px)");
+  const matchesMobile = useMediaQuery("(max-width:700px)");
+
+  useEffect(() => {
+    
+    if(matchesMobile && config.slidesToShow !== 1)
+    setConfig({ ...config, slidesToShow: 1,slidesToScroll:1 });
+    else if(matchesSm && config.slidesToShow !== 2)
+    setConfig({ ...config, slidesToShow: 2,slidesToScroll:2 });
+    else if (matchesMd && config.slidesToShow !== 3)
+      setConfig({ ...config, slidesToShow: 3,slidesToScroll:2 });
+    else if (!matchesMd && config.slidesToShow !== 4)
+      setConfig({ ...config, slidesToShow: 4,slidesToScroll:2 });
+  }, [matchesMd,matchesSm,matchesMobile]);
+
   const ArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <img
       {...props}
@@ -61,7 +78,7 @@ function Home(props) {
       src={next}
     />
   );
-  const config = {
+  const [config, setConfig] = useState({
     dots: true,
     infinite: true,
     speed: 500,
@@ -71,14 +88,14 @@ function Home(props) {
     nextArrow: <ArrowRight />,
 
     rows: 1,
-  };
+  });
 
-  const viewProduct = (id)=>{
+  const viewProduct = (id) => {
     props.history.push({
-      pathname:"/product/"+id,
-      state: { collection: "Best Sellers" }
-    })
-  }
+      pathname: "/product/" + id,
+      state: { collection: "Best Sellers" },
+    });
+  };
 
   useEffect(() => {
     props.getProductsForHome();
@@ -107,7 +124,6 @@ function Home(props) {
       background: img7,
     },
   ];
-  
 
   return (
     <div className="home">
@@ -141,7 +157,7 @@ function Home(props) {
                           closeModal={props.closeModal}
                           key={product.id}
                           product={product}
-                          viewProduct={()=>viewProduct(product.id)}
+                          viewProduct={() => viewProduct(product.id)}
                         />
                       ))
                     : ""}
@@ -156,7 +172,7 @@ function Home(props) {
       <div className="features">
         <div className="feature img-feature">
           {/* <LazyLoadImage src={img2}></LazyLoadImage> */}
-          <img src={img2} alt=""/>
+          <img src={img2} alt="" />
           <div>
             <button className="label-btn">Add to Cart</button>
             <div className="product-card__footer">
@@ -175,7 +191,7 @@ function Home(props) {
         </div>
         <div className="feature img-feature feature__four">
           {/* <LazyLoadImage src={img4}></LazyLoadImage> */}
-          <img src={img4} alt=""/>
+          <img src={img4} alt="" />
           <div>
             <button className="label-btn">Add to Cart</button>
             <div className="product-card__footer">
@@ -205,6 +221,8 @@ function Home(props) {
             <img src={img15} alt=""></img>
             <img src={img18} alt=""></img>
           </div>
+          <img className="mobileImg" src={img14} alt=""></img>
+
           <div className="desc">
             <div>
               <div className="dash" />

@@ -53,3 +53,4 @@ const mapStateToProps = (state) => ({
 });
 
 export default withRouter(connect(mapStateToProps)(ProfileHeader));
+// export default connect(mapStateToProps)(withRouter(ProfileHeader));

@@ -23,7 +23,6 @@ function ProductModal(props) {
     viewProduct();
   };
 
-  console.log(props)
 
   const addToCart = async () => {
     const data = {

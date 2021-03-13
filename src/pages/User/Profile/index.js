@@ -282,28 +282,25 @@ function Profile(props) {
         </div>
 
         <form id="profile-form">
-          <div className="inline-input">
+          <div className="inline-inputs">
             <FormField
               id={"firstName"}
               formdata={formData.firstName}
               change={(element) => updateForm(element)}
             />
-          </div>
-          <div className="inline-input">
             <FormField
               id={"lastName"}
               formdata={formData.lastName}
               change={(element) => updateForm(element)}
             />
           </div>
-          <div className="inline-input">
+          <div className="inline-inputs">
             <FormField
               id={"email"}
               formdata={formData.email}
               change={(element) => updateForm(element)}
             />
-          </div>
-          <div className="inline-input">
+          
             <FormField
               id={"phone"}
               formdata={formData.phone}
