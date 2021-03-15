@@ -39,7 +39,7 @@ function Layout(props) {
         <AuthModel closeModal={props.closeModal} />
       ) : (
         <> */}
-      <AuthHeader closeModal={props.closeModal} openModal={props.openModal} />
+      <AuthHeader matchesMobile={matchesMobile} closeModal={props.closeModal} openModal={props.openModal} />
       <Header role={props.role} />
       {<ModalManager closeModal={props.closeModal} />}
       <div style={{ display: display }}>{props.children}</div>

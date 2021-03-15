@@ -23,13 +23,16 @@ function AuthHeader(props) {
   const admin = profile.role ? "admin" : null;
 
   const openCart = () => {
-    if (authenticated)
-      props.openModal("CartModel", {
-        uid: props.auth.uid,
-        closeModal: props.closeModal,
-        // cart:props.cart,
-        // cartTotal:props.profile.cart
-      });
+    if (authenticated) {
+      if (props.matchesMobile)
+        props.openModal("CartModel", {
+          uid: props.auth.uid,
+          closeModal: props.closeModal,
+          // cart:props.cart,
+          // cartTotal:props.profile.cart
+        });
+      else props.history.push("/cart");
+    }
   };
 
   return (
@@ -61,7 +64,7 @@ function AuthHeader(props) {
             Cart (
             {props.profile.cart
               ? props.profile.cart >= 100
-                ? "+99" 
+                ? "+99"
                 : props.profile.cart
               : 0}
             )

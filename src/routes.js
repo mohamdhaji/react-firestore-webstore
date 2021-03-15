@@ -12,6 +12,9 @@ const AddProduct = React.lazy(() => import("./pages/Admin/add_product"));
 const Profile = React.lazy(() => import("./pages/User/Profile"));
 const Product = React.lazy(() => import("./pages/Product"));
 const Cart = React.lazy(() => import("./pages/User/Cart"));
+const Wallet = React.lazy(() => import("./pages/User/Wallet"));
+const Address = React.lazy(() => import("./pages/User/Addresses"));
+const WishList = React.lazy(() => import("./pages/User/WishList"));
 
 export default function Routes() {
   return (
@@ -26,7 +29,10 @@ export default function Routes() {
             <Route path="/addProduct" component={AddProduct} />
             <Route path="/product/:id" component={Product} />
             <Route path="/profile" component={Profile} />
-            <Route path="/orders" component={Cart} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/myAddress" component={Address} />
+            <Route path="/wallet" component={Wallet} />
+            <Route path="/wishlist" component={WishList} />
             <Route exact path="/" component={Home} />
           </Switch>
         </Layout>

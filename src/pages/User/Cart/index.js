@@ -97,8 +97,11 @@ function Cart(props) {
 
   return (
     <UserLayout>
-      <div className="my-orders">
+      <div  className="my-orders">
+      <div className="mobile-checkout">
       <Button loading={false} title="Checkout" type="btn-checkout" />
+
+      </div>
 
         <div className="left">
           <div className="title">My Cart</div>

@@ -6,8 +6,8 @@ import { Link, withRouter } from "react-router-dom";
 
 function ProfileHeader(props) {
   const navItems = [
-    { to: "/orders", name: "My Orders" },
-    { to: "/addresses", name: "My Addresses" },
+    { to: "/cart", name: "My Cart" },
+    { to: "/myAddress", name: "My Addresses" },
     { to: "/wallet", name: "My Wallet" },
     { to: "/wishlist", name: "My Wishlist" },
     { to: "/profile", name: "My Account" },

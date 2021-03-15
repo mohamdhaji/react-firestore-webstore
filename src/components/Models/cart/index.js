@@ -157,7 +157,7 @@ function CartModel(props) {
                 <div>Cart Empty</div>
               )}
             </div>
-            <Link to="/orders">
+            <Link to="/cart">
               <Button
                 onClick={props.closeModal}
                 loading={false}
