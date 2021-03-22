@@ -2283,13 +2283,20 @@ button[disabled] {
   .contact-card h1 {
     font-size: 20px;
   }
-}
-
-@media (max-width: 980px) {
   .user-profile__header .nav-items li a {
     font-size: 16px;
   }
+  .home .main-section {
+    height:700px;
+    background-attachment: initial;
+  }
+  .feature{
+    height:700px;
+
+  }
+
 }
+
 @media (max-width: 750px) {
   .our-store .features .text {
     font-size: 16px;
@@ -2297,6 +2304,7 @@ button[disabled] {
   .contact-cards .contact-card:not(:last-child) {
     margin-right: 30px;
   }
+
 }
 
 @media (max-width: 600px) {
