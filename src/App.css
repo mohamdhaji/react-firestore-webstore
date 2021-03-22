@@ -2297,6 +2297,9 @@ button[disabled] {
   .about-card:not(:last-child) {
     margin-right: 28px;
 }
+.my-orders .right{
+  margin-left:10px;
+}
 
 }
 
