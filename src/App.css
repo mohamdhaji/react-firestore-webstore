@@ -2287,13 +2287,16 @@ button[disabled] {
     font-size: 16px;
   }
   .home .main-section {
-    height:700px;
+    height:500px;
     background-attachment: initial;
   }
   .feature{
-    height:700px;
+    height:600px;
 
   }
+  .about-card:not(:last-child) {
+    margin-right: 28px;
+}
 
 }
 
