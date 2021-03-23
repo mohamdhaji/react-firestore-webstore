@@ -543,7 +543,7 @@ a:not(.black-shadow) {
 }
 
 .footer {
-  margin-top: 50px;
+  margin-top: 80px;
   width: 100%;
   color: black;
   display: flex;
@@ -2293,6 +2293,9 @@ button[disabled] {
   .feature{
     height:600px;
 
+  }
+  .footer__item{
+    width:19%;
   }
   .about-card:not(:last-child) {
     margin-right: 28px;
