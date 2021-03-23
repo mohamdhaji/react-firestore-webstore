@@ -2342,7 +2342,7 @@ button[disabled] {
   .home .main-section {
     background-image: url(./util/images/homemobile.jpeg);
     background-attachment: unset;
-    height: 380px;
+    height: 320px;
   }
   .best-sell-products {
     padding: 0px 10px;
